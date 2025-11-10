@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PowerPulse — Smart Energy Dashboard</title>
+  <link rel="stylesheet" href="/public/css/dashboard.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="sidebar-overlay"></div>
+      <div class="sidebar-header">
+        <h2><i class="fas fa-bolt"></i> PowerPulse</h2>
+        <button id="toggleSidebar" title="Toggle Sidebar">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+     <ul class="nav-list">
+  <li class="active"><a href="#"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+  <li><a href="/public/html/stored-data.html"><i class="fas fa-table"></i><span>Data Table</span></a></li>
+  <li><a href="#"><i class="fas fa-chart-bar"></i><span>Reports</span></a></li>
+  <li><a href="#"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+  <li><a href="/public/html/supply.html"><i class="fas fa-bolt"></i><span>Supply Source</span></a></li>
+</ul>
+
+
+      <footer class="sidebar-footer">
+        <small>v2.0 — © PowerPulse</small>
+      </footer>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <h1>⚡ PowerPulse Energy Dashboard</h1>
+          <p class="subtitle">Real-time Grid & Generator Analytics</p>
+        </div>
+        <div class="header-actions">
+          <div id="connectionStatus" class="status-badge">Connecting...</div>
+          <button id="themeToggle">🌙 Dark Mode</button>
+        </div>
+      </header>
+
+      <!-- GRID SECTION -->
+      <section class="section grid-section">
+        <div class="section-header">
+          <h2><i class="fas fa-city"></i> Grid Meter Readings</h2>
+          <span class="section-divider"></span>
+        </div>
+
+        <div class="cards-container">
+          <div class="card"><h3>Voltage (V)</h3><p id="gridVoltage">--</p></div>
+          <div class="card highlight"><h3>Average Voltage (V)</h3><p id="gridAvgVoltage">--</p></div>
+          <div class="card"><h3>Current (A)</h3><p id="gridCurrent">--</p></div>
+          <div class="card"><h3>Power Factor</h3><p id="gridPowerFactor">--</p></div>
+          <div class="card"><h3>THD (%)</h3><p id="gridTHD">--</p></div>
+          <div class="card"><h3>Active Power (kW)</h3><p id="gridActivePower">--</p></div>
+          <div class="card highlight"><h3>Average Active Power (kW)</h3><p id="gridAvgActivePower">--</p></div>
+        </div>
+
+        <div class="charts-row">
+          <div class="chart-container">
+            <h3>Grid Voltage Trends</h3>
+            <canvas id="gridVoltageChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Grid Current Trends</h3>
+            <canvas id="gridCurrentChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- GENERATOR SECTION -->
+      <section class="section generator-section">
+        <div class="section-header">
+          <h2><i class="fas fa-cogs"></i> Generator Meter Readings</h2>
+          <span class="section-divider"></span>
+        </div>
+
+        <div class="cards-container">
+          <div class="card"><h3>Voltage (V)</h3><p id="generatorVoltage">--</p></div>
+          <div class="card highlight"><h3>Average Voltage (V)</h3><p id="generatorAvgVoltage">--</p></div>
+          <div class="card"><h3>Current (A)</h3><p id="generatorCurrent">--</p></div>
+          <div class="card"><h3>Power Factor</h3><p id="generatorPowerFactor">--</p></div>
+          <div class="card"><h3>THD (%)</h3><p id="generatorTHD">--</p></div>
+          <div class="card"><h3>Active Power (kW)</h3><p id="generatorActivePower">--</p></div>
+          <div class="card highlight"><h3>Average Active Power (kW)</h3><p id="generatorAvgActivePower">--</p></div>
+        </div>
+
+        <div class="charts-row">
+          <div class="chart-container">
+            <h3>Generator Voltage Trends</h3>
+            <canvas id="generatorVoltageChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Generator Current Trends</h3>
+            <canvas id="generatorCurrentChart"></canvas>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/public/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* Table Container Styling */
+.table-section {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  margin: 60px auto;
+  overflow-x: auto;
+  max-width: 960px;
+  width: calc(100% - 280px); /* Leave space for sidebar if needed */
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  color:black;
+  min-width: 700px;
+}
+
+/* Table Head */
+thead {
+  background-color: #2c3e50; /* Matches navbar */
+  color: #ffd700;            /* Highlight color */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table Cells */
+th, td {
+  padding: 14px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+/* Zebra Stripes */
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Hover Effect */
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease;
+}
+
+/* Dark Mode Styling */
+body.dark-mode .table-section {
+  background-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode thead {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffd700;
+}
+
+body.dark-mode tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+body.dark-mode tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode td, body.dark-mode th {
+  color: #f5f5f5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .table-section {
+    width: 95%;
+    padding: 20px 10px;
+  }
+
+  table {
+    font-size: 0.85rem;
+    min-width: unset;
+  }
+
+  th, td {
+    padding: 10px 8px;
+  }
+}

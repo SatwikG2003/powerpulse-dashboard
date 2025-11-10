@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MSEDCL & Diesel Generator</title>
+  <link rel="stylesheet" href="/public/css/supply.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>MSEDCL & Diesel Generator</h1>
+    </header>
+
+    <!-- ✅ Supply Status Cards -->
+    <main>
+      <section class="card">
+        <h2>MSEDCL Supply</h2>
+        <div class="status">
+          <span id="msedcl-status" class="status-circle green"></span>
+          <span id="msedcl-text">Active</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Diesel Generator</h2>
+        <div class="status">
+          <span id="dg-status" class="status-circle red"></span>
+          <span id="dg-text">Inactive</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- ✅ Graph Section -->
+    <section class="graph-section">
+      <h2>Supply Data Analysis</h2>
+      <canvas id="supplyChart"></canvas>
+      <div class="btn-group">
+        <button onclick="showAverage()">Average</button>
+        <button onclick="showMax()">Max</button>
+        <button onclick="showMin()">Min</button>
+      </div>
+    </section>
+
+    <!-- ✅ Back Button -->
+    <footer>
+      <a href="/" class="back-btn">⬅ Back to Dashboard</a>
+    </footer>
+  </div>
+
+  <script src="/js/supply.js"></script>
+</body>
+</html>
